@@ -1,6 +1,6 @@
 /* Warna Latar Belakang dengan Gradasi */
 body {
-    background: linear-gradient(to bottom, #ffafcc, #333, #ffffff);
+    background: linear-gradient(to bottom, #FFD700, #FFA500, #FFFFFF, #808080, #000000);
     font-family: Arial, sans-serif;
     color: #333;
     margin: 0;
@@ -9,7 +9,7 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(to right, #ff639b, #333);
+    background: linear-gradient(to right, #FF8C00, #808080);
     color: white;
     padding: 20px;
     text-align: center;
@@ -73,7 +73,7 @@ p {
     margin-bottom: 10px;
     border-radius: 50%;
     object-fit: cover; /* Menjaga rasio gambar */
-    border: 3px solid #ff639b; /* Border gambar */
+    border: 3px solid #FF8C00; /* Border gambar */
     transition: transform 0.3s;
 }
 
