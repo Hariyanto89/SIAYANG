@@ -1,0 +1,45 @@
+/* Gaya untuk Coming Soon */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Wrapper untuk elemen */
+.coming-soon {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tulisan COMING SOON */
+.coming-soon-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;
+    margin: 0 0 10px;
+}
+
+/* Gambar */
+.coming-soon-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid black;
+    margin: 10px 0;
+}
+
+/* Kontak Developer */
+.contact-info {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+}
