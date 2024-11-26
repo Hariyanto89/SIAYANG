@@ -2,9 +2,12 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #1e3c72, #2a5298, #000);
+    background: linear-gradient(to bottom, #004d00, #ffffff, #004d00, #66ff66, #660066, #cc66ff);
     color: white;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Header */
@@ -13,8 +16,9 @@ header h1 {
     background-color: rgba(0, 0, 0, 0.7);
     padding: 20px 0;
     margin: 0;
-    font-size: 2rem;
-    color: #00d4ff;
+    font-size: 2.5rem;
+    color: #66ff66;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Navigasi */
@@ -25,22 +29,22 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
 }
 
 nav li {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(0, 77, 0, 0.6));
+    border-radius: 15px;
     overflow: hidden;
-    width: 200px;
+    width: 220px;
     text-align: center;
-    transition: transform 0.3s, background-color 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 nav li:hover {
-    transform: scale(1.05);
-    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
 }
 
 nav a {
@@ -50,20 +54,22 @@ nav a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
+    padding: 20px;
+    gap: 10px;
 }
 
 nav img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #66ff66;
 }
 
 /* Responsif */
 @media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 
     nav li {
