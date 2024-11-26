@@ -50,6 +50,19 @@ p {
     position: relative;
 }
 
+.link-list li:before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Mengisi seluruh elemen */
+    border-radius: 10px;
+    padding: 5px; /* Jarak border ke isi */
+    background: linear-gradient(45deg, black, orange, purple); /* Gradasi hitam-oranye-ungu */
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude; /* Membuat border transparan */
+    pointer-events: none; /* Tidak memengaruhi interaksi */
+}
+
 .link-list li:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -97,7 +110,7 @@ p {
 
 .download-btn button {
     padding: 10px 20px;
-    background-color: #4CAF50; /* Hijau */
+    background-color: purple; /* Warna dasar ungu */
     color: white;
     border: none;
     border-radius: 5px;
@@ -109,7 +122,7 @@ p {
 }
 
 .download-btn button:hover {
-    background-color: #45a049; /* Warna hover */
+    background-color: #5a0099; /* Warna hover ungu tua */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
