@@ -1,6 +1,6 @@
-/* Warna Latar Belakang dengan Gradasi Diagonal */
+/* Warna Latar Belakang dengan Gradasi */
 body {
-    background: linear-gradient(45deg, red, pink, lightpink, purple, lavender);
+    background: linear-gradient(to bottom, #800080, #DDA0DD, #808080, #FFC0CB, #FFFFFF);
     font-family: Arial, sans-serif;
     color: #333;
     margin: 0;
@@ -9,51 +9,41 @@ body {
 
 /* Header */
 header {
-    background: linear-gradient(to right, #ff639b, #333);
+    background: linear-gradient(to right, #800080, #FFC0CB);
     color: white;
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
+h1 {
     margin: 0;
     font-size: 2rem;
 }
 
-header p {
+p {
     margin: 5px 0 0;
     font-size: 1rem;
 }
 
 /* Menu Utama */
 .link-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Jarak antar kartu */
-    padding: 20px;
-    margin: 0;
-    list-style-type: none;
+    gap: 20px;
 }
 
-/* Kartu */
 .link-list li {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
-    width: 125px; /* Setengah dari ukuran sebelumnya */
+    width: 250px; /* Ukuran default untuk menu */
     max-width: 100%;
-    min-height: 200px; /* Tinggi minimum kartu */
-    border: 5px solid;
-    border-image: linear-gradient(to bottom, green, yellow, orange, purple) 1; /* Border Multicolor */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    padding: 10px;
 }
 
 .link-list li:hover {
@@ -61,76 +51,44 @@ header p {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
+/* Link */
+.link-list a {
+    text-decoration: none;
+    color: #00796b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+.link-list a:hover {
+    background-color: #fce4ec; /* Warna hover */
+}
+
 /* Gambar Ikon */
 .link-list .icon {
-    width: 70px; /* Diperkecil */
-    height: 70px; /* Diperkecil */
+    width: 100px;
+    height: 100px;
     margin-bottom: 10px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ff639b; /* Border gambar */
+    object-fit: cover; /* Menjaga rasio gambar */
+    border: 3px solid #800080; /* Border gambar */
     transition: transform 0.3s;
 }
 
 .link-list .icon:hover {
-    transform: scale(1.1); /* Efek hover */
+    transform: scale(1.1); /* Animasi hover gambar */
 }
 
-/* Tombol Unduh */
-.download-btn {
-    margin-top: 10px;
-    width: 100%;
-}
-
-.download-btn button {
-    padding: 5px 10px;
-    background-color: purple;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 12px; /* Font kecil sesuai ukuran kartu */
-    width: 90%;
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-.download-btn button:hover {
-    background-color: #5a0099; /* Warna hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsif untuk HP */
-@media (max-width: 576px) {
+/* Responsif untuk HP dan Tablet */
+@media (max-width: 768px) {
     .link-list {
-        gap: 10px; /* Jarak antar kartu lebih kecil */
+        flex-direction: column;
+        align-items: center;
     }
 
     .link-list li {
-        width: 45%; /* Dua kartu per baris */
-        min-height: 150px; /* Tinggi kartu lebih kecil */
-    }
-
-    .download-btn button {
-        font-size: 10px; /* Font kecil untuk tombol */
-        padding: 5px;
-    }
-
-    .link-list .icon {
-        width: 50px; /* Ikon lebih kecil */
-        height: 50px;
-    }
-}
-
-/* Responsif untuk Tablet */
-@media (min-width: 577px) and (max-width: 768px) {
-    .link-list li {
-        width: 30%; /* Tiga kartu per baris */
-    }
-}
-
-/* Responsif untuk Desktop */
-@media (min-width: 769px) {
-    .link-list li {
-        width: 20%; /* Lima kartu per baris */
+        width: 90%; /* Menyesuaikan ukuran menu untuk layar kecil */
     }
 }
