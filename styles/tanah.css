@@ -44,8 +44,26 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
     width: 250px; /* Ukuran default untuk menu */
     max-width: 100%;
+    min-height: 320px; /* Pastikan semua card memiliki tinggi minimum yang sama */
+    border: 5px solid transparent; /* Awalnya border transparan */
+    background-clip: padding-box; /* Membatasi background */
+    position: relative;
 }
 
+.link-list li:before {
+    content: '';
+    position: absolute;
+    inset: 0; /* Isi seluruh area elemen */
+    border-radius: 10px; /* Ikuti border-radius elemen */
+    padding: 5px; /* Jarak antara border dan isi */
+    background: linear-gradient(45deg, #6a5acd, #8a2be2); /* Gradasi biru-ungu */
+    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude; /* Membuat border gradasi */
+    pointer-events: none; /* Border tidak dapat diinteraksi */
+}
+
+/* Hover Effect */
 .link-list li:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -60,6 +78,7 @@ p {
     align-items: center;
     padding: 15px;
     text-align: center;
+    height: 100%; /* Isi link menyesuaikan card */
 }
 
 .link-list a:hover {
@@ -93,6 +112,7 @@ p {
     }
 }
 
+/* Tombol Unduh */
 .download-btn button {
     padding: 8px 12px;
     background-color: #4CAF50;
@@ -105,4 +125,3 @@ p {
 .download-btn button:hover {
     background-color: #45a049;
 }
-
