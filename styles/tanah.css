@@ -44,23 +44,10 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
     width: 250px; /* Ukuran default untuk menu */
     max-width: 100%;
-    min-height: 350px; /* Pastikan semua card memiliki tinggi minimum yang sama */
+    min-height: 400px; /* Pastikan semua card memiliki tinggi minimum yang cukup */
     border: 5px solid transparent; /* Awalnya border transparan */
     background-clip: padding-box; /* Membatasi background */
     position: relative;
-}
-
-.link-list li:before {
-    content: '';
-    position: absolute;
-    inset: 0; /* Mengisi seluruh elemen */
-    border-radius: 10px;
-    padding: 5px; /* Jarak border ke isi */
-    background: linear-gradient(45deg, black, orange, purple); /* Gradasi hitam-oranye-ungu */
-    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude; /* Membuat border transparan */
-    pointer-events: none; /* Tidak memengaruhi interaksi */
 }
 
 .link-list li:hover {
@@ -101,14 +88,15 @@ p {
 
 /* Tombol Unduh */
 .download-btn {
-    display: block; /* Pastikan elemen terlihat */
+    display: block !important;
     text-align: center;
-    margin-top: 10px; /* Jarak dari elemen di atasnya */
-    z-index: 10; /* Pastikan tidak tertutupi elemen lain */
+    margin-top: 10px;
     position: relative;
+    z-index: 999;
 }
 
 .download-btn button {
+    display: block !important;
     padding: 10px 20px;
     background-color: purple; /* Warna dasar ungu */
     color: white;
@@ -117,7 +105,7 @@ p {
     cursor: pointer;
     font-size: 14px;
     width: 100%; /* Tombol memenuhi lebar card */
-    max-width: 200px; /* Maksimal lebar tombol */
+    max-width: 200px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -135,18 +123,26 @@ p {
 
     .link-list li {
         width: 90%; /* Menyesuaikan ukuran menu untuk layar kecil */
-        min-height: 300px; /* Sesuaikan tinggi card di layar kecil */
+        min-height: 300px;
     }
 
     .download-btn button {
-        font-size: 16px; /* Perbesar teks tombol untuk layar kecil */
-        padding: 12px 15px; /* Atur jarak tombol */
-        width: 100%; /* Tombol memenuhi lebar */
-        text-align: center;
+        font-size: 16px;
+        padding: 12px 15px;
+        width: 100%;
     }
 }
 
-/* Debugging (Opsional) */
-.download-btn button.debug {
-    background-color: red !important; /* Tambahkan untuk memastikan tombol terlihat */
+/* Responsif untuk Landscape */
+@media (max-width: 1024px) and (orientation: landscape) {
+    .link-list li {
+        width: 80%;
+        min-height: 350px;
+    }
+
+    .download-btn button {
+        font-size: 14px;
+        padding: 10px 12px;
+        width: 90%;
+    }
 }
