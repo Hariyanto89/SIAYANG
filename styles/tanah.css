@@ -108,7 +108,12 @@ p {
     }
 
     .link-list li {
-        width: 90%; /* Menyesuaikan ukuran menu untuk layar kecil */
+        width: 90%; /* Ukuran menu pada layar kecil */
+    }
+
+    .download-btn button {
+        width: 100%; /* Tombol memenuhi lebar elemen pada layar kecil */
+        text-align: center;
     }
 }
 
@@ -126,15 +131,19 @@ p {
     background-color: #45a049;
 }
 
+/* Tombol Unduh */
 .download-btn button {
-    padding: 8px 12px;
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Hijau */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px; /* Jarak dari elemen di atasnya */
 }
 
 .download-btn button:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Warna hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
