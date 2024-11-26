@@ -44,26 +44,12 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
     width: 250px; /* Ukuran default untuk menu */
     max-width: 100%;
-    min-height: 320px; /* Pastikan semua card memiliki tinggi minimum yang sama */
+    min-height: 350px; /* Pastikan semua card memiliki tinggi minimum yang sama */
     border: 5px solid transparent; /* Awalnya border transparan */
     background-clip: padding-box; /* Membatasi background */
     position: relative;
 }
 
-.link-list li:before {
-    content: '';
-    position: absolute;
-    inset: 0; /* Isi seluruh area elemen */
-    border-radius: 10px; /* Ikuti border-radius elemen */
-    padding: 5px; /* Jarak antara border dan isi */
-    background: linear-gradient(45deg, #6a5acd, #8a2be2); /* Gradasi biru-ungu */
-    -webkit-mask: linear-gradient(white, white) content-box, linear-gradient(white, white);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude; /* Membuat border gradasi */
-    pointer-events: none; /* Border tidak dapat diinteraksi */
-}
-
-/* Hover Effect */
 .link-list li:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
@@ -100,38 +86,15 @@ p {
     transform: scale(1.1); /* Animasi hover gambar */
 }
 
-/* Responsif untuk HP dan Tablet */
-@media (max-width: 768px) {
-    .link-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .link-list li {
-        width: 90%; /* Ukuran menu pada layar kecil */
-    }
-
-    .download-btn button {
-        width: 100%; /* Tombol memenuhi lebar elemen pada layar kecil */
-        text-align: center;
-    }
-}
-
 /* Tombol Unduh */
-.download-btn button {
-    padding: 8px 12px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.download-btn {
+    display: block; /* Pastikan elemen terlihat */
+    text-align: center;
+    margin-top: 10px; /* Jarak dari elemen di atasnya */
+    z-index: 10; /* Pastikan tidak tertutupi elemen lain */
+    position: relative;
 }
 
-.download-btn button:hover {
-    background-color: #45a049;
-}
-
-/* Tombol Unduh */
 .download-btn button {
     padding: 10px 20px;
     background-color: #4CAF50; /* Hijau */
@@ -140,10 +103,37 @@ p {
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    margin-top: 10px; /* Jarak dari elemen di atasnya */
+    width: 100%; /* Tombol memenuhi lebar card */
+    max-width: 200px; /* Maksimal lebar tombol */
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .download-btn button:hover {
     background-color: #45a049; /* Warna hover */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsif untuk HP dan Tablet */
+@media (max-width: 768px) {
+    .link-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .link-list li {
+        width: 90%; /* Menyesuaikan ukuran menu untuk layar kecil */
+        min-height: 300px; /* Sesuaikan tinggi card di layar kecil */
+    }
+
+    .download-btn button {
+        font-size: 16px; /* Perbesar teks tombol untuk layar kecil */
+        padding: 12px 15px; /* Atur jarak tombol */
+        width: 100%; /* Tombol memenuhi lebar */
+        text-align: center;
+    }
+}
+
+/* Debugging (Opsional) */
+.download-btn button.debug {
+    background-color: red !important; /* Tambahkan untuk memastikan tombol terlihat */
 }
