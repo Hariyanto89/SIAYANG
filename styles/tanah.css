@@ -125,3 +125,16 @@ p {
 .download-btn button:hover {
     background-color: #45a049;
 }
+
+.download-btn button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn button:hover {
+    background-color: #45a049;
+}
